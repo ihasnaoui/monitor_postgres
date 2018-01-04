@@ -45,3 +45,16 @@ You should assure that postgres_exporter connected to postgres db:
 `docker-compose logs postgres_exporter`
 You should find:
 `level=info msg="Established new database connection."`
+
+### Configure Grafana
+
+Grafana logo -> Datasources -> Add data source:
+* name: 'prometheus' (important to use this name for further steps)
+* type: Prometheus
+* URL: http://prometheus:9090
+Add
+
+Grafana logo -> Dashboards -> Import
+* paste JSON included in this repo
+* Import
+* in the top-left corner put Host: `postgres_exporter:9187`
