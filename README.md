@@ -36,7 +36,7 @@ services:
 Run the whole stack of tools with a single command:
 `docker-compose up -d`
 
-It should start 3 components:
+#### It should start 3 components:
 - exporter of postgres metrics
 - prometheus database
 - grafana frontend
@@ -55,9 +55,14 @@ Login with admin/admin
 * name: 'prometheus' (important to use this name for further steps)
 * type: Prometheus
 * URL: `http://prometheus:9090`
-Add.
+** Add.
 
 #### Grafana logo -> Dashboards -> Import
 * paste JSON included in this repo
 * Import
 * in the top-left corner put Host: `postgres_exporter:9187`
+
+### Cleaning up
+In case you want to clean up just run
+`docker-compose down`
+From the directory where `docker-compose.yml` file is placed
