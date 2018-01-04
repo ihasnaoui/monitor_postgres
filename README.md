@@ -48,13 +48,16 @@ You should find:
 
 ### Configure Grafana
 
-Grafana logo -> Datasources -> Add data source:
+You can reach Grafana on http://localhost:3000 (or host's IP).
+Login with admin/admin
+
+#### Grafana logo -> Datasources -> Add data source:
 * name: 'prometheus' (important to use this name for further steps)
 * type: Prometheus
-* URL: http://prometheus:9090
-Add
+* URL: `http://prometheus:9090`
+Add.
 
-Grafana logo -> Dashboards -> Import
+#### Grafana logo -> Dashboards -> Import
 * paste JSON included in this repo
 * Import
 * in the top-left corner put Host: `postgres_exporter:9187`
