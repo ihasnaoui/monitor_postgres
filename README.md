@@ -54,7 +54,8 @@ RHEL/CentOS: glibc-static package.
 go get github.com/prometheus/node_exporter
 cd ${GOPATH-$HOME/go}/src/github.com/prometheus/node_exporter
 make
-./node_exporter```
+./node_exporter
+```
 
 Then you adapt `prometheus.yml` file accordingly with postgres_exporters and node_exporters.
 
