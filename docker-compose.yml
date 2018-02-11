@@ -1,10 +1,19 @@
 version: '3.2'
 services:
-  postgres_exporter:
+  postgres_exporter_one:
     image: wrouesnel/postgres_exporter
     environment:
       # PUT YOUR DATA_SOURCE_NAME BELOW
-      DATA_SOURCE_NAME: "postgresql://postgres:password@10.48.136.82:5432/?sslmode=disable"
+      DATA_SOURCE_NAME: "postgresql://postgres:password@192.168.1.2:5432/?sslmode=disable"
+  postgres_exporter_two:
+    image: wrouesnel/postgres_exporter
+    environment:
+      # PUT YOUR DATA_SOURCE_NAME BELOW
+      DATA_SOURCE_NAME: "postgresql://postgres:password@192.168.1.2:5433/?sslmode=disable"
+  node_exporter:
+    image: quay.io/prometheus/node-exporter
+    network_mode: "host"
+    pid: "host"
   prometheus:
     image: prom/prometheus
     volumes:
